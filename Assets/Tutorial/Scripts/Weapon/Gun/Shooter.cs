@@ -15,9 +15,16 @@ public class Shooter : MonoBehaviour
     public UnityEvent<Vector3> OnShootSuccess;
     public UnityEvent OnShootFail;
 
+    private Magazine magazine;
+
+    private void Awake()
+    {
+        magazine = GetComponent<Magazine>();
+    }
+
     private void Start()
     {
-        
+        Stop();
     }
 
     public void Play()
@@ -35,19 +42,30 @@ public class Shooter : MonoBehaviour
     {
         var wfs = new WaitForSeconds(shootDelay);
 
-        while(true)
+        while (true)
         {
-            Shoot();
+            if (magazine.Use())
+            {
+                Shoot();
+            }
+            else
+            {
+                OnShootFail?.Invoke();
+            }
 
             yield return wfs;
         }
     }
 
-    public void Shoot()
+    private void Shoot()
     {
-        if(Physics.Raycast(shootPoint.position, shootPoint.forward, out RaycastHit hitInfo, maxDistance, hittableMask))
+        if (Physics.Raycast(shootPoint.position, shootPoint.forward, out RaycastHit hitInfo, maxDistance, hittableMask))
         {
             Instantiate(hitEffectPrefab, hitInfo.point, Quaternion.identity);
+
+            var hitObject = hitInfo.transform.GetComponent<Hittable>();
+            hitObject?.Hit();
+
             OnShootSuccess?.Invoke(hitInfo.point);
         }
         else

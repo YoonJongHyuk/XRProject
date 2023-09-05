@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChangeEmissionColor : MonoBehaviour
 {
-    public float Intensity = 5f;
+    public float intensity = 5f;
 
     private Renderer target;
 
@@ -15,6 +15,6 @@ public class ChangeEmissionColor : MonoBehaviour
 
     public void Call(Color color)
     {
-        target.material.SetColor("_EmissionColor", color * Intensity);
+        target.material.SetColor("_EmissionColor", color * intensity);
     }
 }

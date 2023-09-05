@@ -7,7 +7,7 @@ public class RayVisualizer : MonoBehaviour
     [Header("Ray")]
     public LineRenderer ray;
     public LayerMask hitRayMask;
-    public float distance = 100.0f;
+    public float distance = 100f;
 
     [Header("Reticle Point")]
     public GameObject reticlePoint;
@@ -34,9 +34,9 @@ public class RayVisualizer : MonoBehaviour
 
     private IEnumerator Process()
     {
-        while(true)
+        while (true)
         {
-            if(Physics.Raycast(transform.position, transform.forward, out RaycastHit hitInfo, distance, hitRayMask))
+            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hitInfo, distance, hitRayMask))
             {
                 ray.SetPosition(1, transform.InverseTransformPoint(hitInfo.point));
                 ray.enabled = true;
@@ -50,6 +50,7 @@ public class RayVisualizer : MonoBehaviour
 
                 reticlePoint.SetActive(false);
             }
+
             yield return null;
         }
     }
