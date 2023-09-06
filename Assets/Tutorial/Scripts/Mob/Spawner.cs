@@ -17,12 +17,12 @@ public class Spawner : MonoBehaviour
             Play();
     }
 
-    public void Play()
+    private void Play()
     {
         StartCoroutine(Process());
     }
 
-    public void Stop()
+    private void Stop()
     {
         StopAllCoroutines();
     }
@@ -32,10 +32,9 @@ public class Spawner : MonoBehaviour
         var factor = startFactor;
         var wfs = new WaitForSeconds(delayPerSpawnGroup);
 
-        while (true)
+        while(true)
         {
             yield return wfs;
-
             yield return StartCoroutine(SpawnProcess(factor));
 
             factor += additiveFactor;
@@ -46,12 +45,14 @@ public class Spawner : MonoBehaviour
     {
         var count = Random.Range(factor, factor * 2f);
 
-        for (int i = 0; i < count; i++)
+        for(int i = 0; i < count; i++)
         {
             Spawn();
 
-            if (Random.value < 0.2f)
+            if(Random.value < 0.2f)
+            {
                 yield return new WaitForSeconds(Random.Range(0.01f, 0.02f));
+            }
         }
     }
 

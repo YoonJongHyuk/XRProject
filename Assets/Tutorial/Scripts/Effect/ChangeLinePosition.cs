@@ -15,7 +15,7 @@ public class ChangeLinePosition : MonoBehaviour
 
     public void Call(Vector3 worldPosition)
     {
-        if (target.useWorldSpace)
+        if(target.useWorldSpace)
         {
             target.SetPosition(index, worldPosition);
         }
