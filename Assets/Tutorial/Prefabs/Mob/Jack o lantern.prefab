@@ -48,6 +48,8 @@ GameObject:
   - component: {fileID: 8958073521312099422}
   - component: {fileID: 8592219004858024414}
   - component: {fileID: 1622154497687168218}
+  - component: {fileID: 6083974659229229542}
+  - component: {fileID: 2989272329822263143}
   m_Layer: 22
   m_Name: Jack o lantern
   m_TagString: Untagged
@@ -210,6 +212,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2989272329822263143}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8958073521312099422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,7 +294,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 0, y: 2, z: 1}
-  target: {fileID: 0}
 --- !u!114 &1622154497687168218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +308,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   min: 0.8
   max: 1.5
+--- !u!114 &6083974659229229542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7356839121461701882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6f555e12e1aac4885c4b3ddcf5e291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 703238550323229039}
+        m_TargetAssemblyTypeName: Mob, Assembly-CSharp
+        m_MethodName: Destroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!135 &2989272329822263143
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7356839121461701882}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.283
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!1001 &3642621301190391989
 PrefabInstance:
   m_ObjectHideFlags: 0
