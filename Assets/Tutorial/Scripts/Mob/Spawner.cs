@@ -17,12 +17,12 @@ public class Spawner : MonoBehaviour
             Play();
     }
 
-    private void Play()
+    public void Play()
     {
         StartCoroutine(Process());
     }
 
-    private void Stop()
+    public void Stop()
     {
         StopAllCoroutines();
     }
