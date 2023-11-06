@@ -8,8 +8,8 @@ public class Magazine : MonoBehaviour, IReloadable
     public int maxBullets = 20;
     public float chargingTime = 2f;
 
-    private int currentBullets;
-    private int CurrentBullets
+    public int currentBullets;
+    public int CurrentBullets
     {
         get => currentBullets;
         set
@@ -62,6 +62,11 @@ public class Magazine : MonoBehaviour, IReloadable
     public void StopReload()
     {
         StopAllCoroutines();
+    }
+
+    public void Message()
+    {
+        Debug.Log("¿‘¿Â");
     }
 
     private IEnumerator ReloadProcess()

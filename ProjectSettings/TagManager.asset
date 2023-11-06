@@ -12,25 +12,25 @@ TagManager:
   - Water
   - UI
   - 
-  - 
-  - 
+  - Player
+  - Grab Interacable
   - 
   - Enviroment
   - 
-  - 
+  - BulletHouse
   - 
   - 
   - Direct Interactor
   - 
   - 
-  - 
+  - Bullet
   - Weapon Stand
   - Gun
   - Bomb
   - Mob
   - Core
   - Teleportation Anchor
-  - 
+  - UIButton
   - 
   - 
   - 
